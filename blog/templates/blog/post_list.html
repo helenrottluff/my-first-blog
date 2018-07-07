@@ -20,21 +20,17 @@
         <title>helenmr-Blog</title>
     </head>
     <body>
-<!-- first section -->
+
         <div>
             <h1><a href="/">Things to know by helenmr</a></h1>
         </div>
-<!-- second section -->
+
+       {% for post in posts %}
         <div>
-            <p>published: 07.07.2018, 12:14</p>
-            <h2><a href="">Psychology</a></h2>
-            <p>There is much more to know.</p>
-        </div>
-<!-- third section -->
-        <div>
-            <p>published: 08.07.2018, 12:14</p>
-            <h2><a href="">Food</a></h2>
-            <p>Here are some applicable recipes.</p>
-        </div>
+            <p>published: {{post.published_date}}</p>
+            <h1><a href=" ">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div> 
+        {% endfor %}
     </body>
 </html>
